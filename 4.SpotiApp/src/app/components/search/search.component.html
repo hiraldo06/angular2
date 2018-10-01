@@ -1,0 +1,25 @@
+<div class="container top30">
+  <div class="row">
+    <div class="col-md-4">
+      <input type="text" class="form-control" name="search"
+      (keyup)="getArtistas()"
+      [(ngModel)]="termino"  autocomplete="off"   placeholder="Buscar Artista">
+    </div>
+    <div *ngIf="termino.length>1"class="col-md-8">
+      <h2 class="text-capitalize">{{termino}}</h2>
+      <hr>
+    </div>
+  </div>
+  <div class="row top30">
+    <div *ngFor="let artist of _searchService.artistas" class="col-md-3 text-center">
+      <label class="puntero" [routerLink]="['/artist',artist.id]">{{artist.name}}</label>
+    </div>
+  </div>
+  <div class="row top30">
+    <div *ngFor="let artist of _searchService.artistas" class="col-md-3 text-center puntero">
+
+      <img [src]="artist.images|sinfoto" [routerLink]="['/artist',artist.id]" alt="..." class="img-thumbnail">
+      <label>{{artist.name}}</label>
+    </div>
+  </div>
+</div>

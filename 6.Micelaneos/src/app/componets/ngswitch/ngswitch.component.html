@@ -1,0 +1,30 @@
+<div [ngSwitch]="condicion">
+
+    <div *ngSwitchCase="1" class="alert alert-primary" role="alert">
+      This is a primary alert—check it out!
+    </div>
+    <div *ngSwitchCase="2"  class="alert alert-secondary" role="alert">
+      This is a secondary alert—check it out!
+    </div>
+    <div *ngSwitchCase="3" class="alert alert-success" role="alert">
+      This is a success alert—check it out!
+    </div >
+    <div *ngSwitchCase="4" class="alert alert-danger" role="alert">
+      This is a danger alert—check it out!
+    </div>
+    <div *ngSwitchCase="5" class="alert alert-warning" role="alert">
+      This is a warning alert—check it out!
+    </div>
+    <div *ngSwitchCase="6" class="alert alert-info" role="alert">
+      This is a info alert—check it out!
+    </div>
+    <div *ngSwitchCase="7" class="alert alert-light" role="alert">
+      This is a light alert—check it out!
+    </div>
+    <div *ngSwitchDefault class="alert alert-dark" role="alert">
+      This is a dark alert—check it out!
+    </div>
+</div>
+<button type="button" class="btn btn-primary" (click)="cambiar()" name="button">
+  Cambiar ngSwitch
+</button>

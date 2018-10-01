@@ -1,0 +1,108 @@
+
+<div class="container">
+  <h1>Pipes</h1>
+  <hr>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Valor</th>
+        <th scope="col">Pipes</th>
+        <th scope="col">Resultado</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{nombre}}</td>
+        <td>uppercase</td>
+        <td>{{nombre|uppercase}}</td>
+      </tr>
+      <tr>
+        <td>{{nombre}}</td>
+        <td>lowercase</td>
+        <td>{{nombre|lowercase}}</td>
+      </tr>
+      <tr>
+        <td>{{nombre}}</td>
+        <td>slice funciona con arreglos tambien</td>
+        <td>{{nombre|slice:0:5}}</td>
+      </tr>
+      <tr>
+        <td>{{numero}}</td>
+        <td>percent</td>
+        <td>{{numero|percent}}</td>
+      </tr>
+      <tr>
+        <td>{{numero}}</td>
+        <td>percent:'.0-2'</td>
+        <td>{{numero|percent:'.0-2'}}</td>
+      </tr>
+      <tr>
+        <td>{{decimales}}</td>
+        <td>number:'.0-5'</td>
+        <td>{{decimales|number:'.0-5'}}</td>
+      </tr>
+      <tr>
+        <td>{{moneda}}</td>
+        <td>currency</td>
+        <td>{{moneda|currency}}</td>
+      </tr>
+      <tr>
+        <td>{{moneda}}</td>
+        <td>currency:'CAD'</td>
+        <td>{{moneda|currency:'CAD':'symbol':'.2-2'}}</td>
+      </tr>
+      <tr>
+        <td>{{moneda}}</td>
+        <td>currency:'CAD':'symbol':'.2-2':'en'</td>
+        <td>{{moneda|currency:'CAD':'symbol':'.2-2':'en'}}</td>
+      </tr>
+      <tr>
+        <td>{{objecto}}</td>
+        <td>json</td>
+        <td><pre>{{objecto|json}}</pre></td>
+      </tr>
+      <tr>
+        <td>{{promesa}}</td>
+        <td>async</td>
+        <td><pre>{{promesa|async}}</pre></td>
+      </tr>
+      <tr>
+        <td>{{fecha}}</td>
+        <td>date cambiar el idioma con LOCALE_ID</td>
+        <td><pre>{{fecha|date}}</pre></td>
+      </tr>
+      <tr>
+        <td>{{fecha}}</td>
+        <td>date:'medium'</td>
+        <td><pre>{{fecha|date:'medium'}}</pre></td>
+      </tr>
+      <tr>
+        <td>{{fecha}}</td>
+        <td>date:'MMd'</td>
+        <td><pre>{{fecha|date:'MMd'}}</pre></td>
+      </tr>
+      <tr>
+        <td>{{personalizada}}</td>
+        <td>personalizada Capitalizacion</td>
+        <td><pre>{{personalizada|capitalizada:false}}</pre></td>
+      </tr>
+      <tr>
+        <td>{{video}}</td>
+        <td>DomSanitizer  domios seguros</td>
+        <td><iframe width="360" height="215" [src]="video|domseguro:'https://www.youtube.com/embed/'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></td>
+      </tr>
+      <tr>
+        <td>
+          {{contrasena}}
+          <button type="button" class="btn btn-outline-primary"
+          (click)="codif = !codif"
+          name="button">Codifica/No codificar</button>
+        </td>
+        <td>Colocar ** de acuerdo a la palabras</td>
+        <td> {{contrasena|codificar:codif}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

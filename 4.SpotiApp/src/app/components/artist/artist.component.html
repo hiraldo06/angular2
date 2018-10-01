@@ -1,0 +1,44 @@
+<div class="container top30">
+  <div class="row">
+        <div class="col-md-4">
+            <img [src]="_searchService.artista.images|sinfoto" [alt]="_searchService.artista.name" class="img-thumbnail">
+            
+        </div>
+        <div class="col-md-8">
+          <div class="container">
+            <h1 class="display-4">{{_searchService.artista.name}}</h1>
+            <div class="col-md-2 .flex-row" *ngFor="let it of _searchService.artista.genres">
+                {{it}}
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+
+        </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Popularidad</th>
+            <th scope="col">Escuchar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let top of _searchService.top;let i=index">
+            <td>{{i+1}}</td>
+            <td><img [src]="top.album.images|sinfoto" class="rounded top50" alt="..."></td>
+            <td>{{top.name}}</td>
+            <td>{{top.popularity}}</td>
+            <td>  <iframe [src]="top.uri|domseguro:'https://open.spotify.com/embed?uri='" width="300" height="80" frameborder="0" allowtransparency="true"></iframe></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

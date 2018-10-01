@@ -1,0 +1,29 @@
+<h1>Alertas Ngclas</h1>
+<div [ngClass]="alerta" class="alert">
+  Tipo de alerta {{alerta}}
+</div>
+
+<button type="button" class="btn btn-danger"
+(click)="alerta = 'alert-danger'" name="button">Danger</button>
+<button type="button" class="btn btn-success"
+(click)="alerta = 'alert-success'" name="button">Success</button>
+<button type="button" class="btn btn-primary"
+(click)="alerta = 'alert-primary'" name="button">Primary</button>
+
+<h2 [ngClass]="{'text-danger':propiedad.danger, 'text-info':!propiedad.danger}">
+  Ng class condicionado en un arreglo
+</h2>
+<button type="button" name="button" (click)="propiedad.danger = !propiedad.danger" class="btn btn-secundary">
+  Cambiar class h2
+</button>
+
+<hr>
+<h2>Procesos asincronos</h2>
+<button class="btn btn-primary" (click)="proceso()" type="button"
+  [disabled]="loading"
+ name="button">
+  <i class="fa"[ngClass]="{'fa-save': !loading, 'fa-refresh fa-spin':loading}"
+   ></i>
+  <span *ngIf="!loading">Guardar Cambios</span>
+  <span *ngIf="loading">Espere un poco...</span>
+</button>
